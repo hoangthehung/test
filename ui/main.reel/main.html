@@ -27,8 +27,24 @@
                 }
             ]
         },
+        "list": {
+            "prototype": "digit/ui/list.reel",
+            "properties": {
+                "element": {"#": "list"},
+                "contentController": {"@": "rangeController"}
+            }
+        },
         "rangeController": {
             "prototype": "montage/core/range-controller"
+        },
+        "task1": {
+            "prototype": "ui/task.reel",
+            "properties": {
+                "element": {"#": "task1"}
+            },
+            "bindings": {
+                "task": {"<-": "@list.iteration.object"}
+            }
         },
         "title": {
             "prototype": "digit/ui/title.reel",
@@ -46,6 +62,9 @@
 
         </h1>
         <button data-montage-id="button"></button>
+        <ul data-montage-id="list">
+            <li data-montage-id="task1"></li>
+        </ul>
     </div>
 </body>
 </html>
